@@ -14,13 +14,13 @@ To create a project with Three.js, we first need to create a `Scene`, `Camera` a
 const scene = new THREE.Scene();
 ```
 
-## 3. Camera:
+### 2.1 Camera:
 
 ```javascript
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 ```
 
-## 4. Renderer:
+### 2.2 Renderer:
 
 First initiate the renderer.
 
@@ -40,7 +40,7 @@ And add the renderer to the body
 document.body.appendChild( renderer.domElement );
 ```
 
-## Result:
+## 2.3 Result:
 
 This gives us the following piece of code:
 
@@ -51,4 +51,34 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
+```
+
+## 3. Adding objects to the scene:
+
+To add objects to the scene you will have to do the following:
+
+## 3.1 Setup geometry:
+
+First create the required geometry
+
+```javascript
+const geometry = new THREE.BoxGeometry();
+````
+
+Then create the material
+
+```javascript
+const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+```
+
+Apply the geometry and material to a new mesh
+
+```javascript
+const cube = new THREE.Mesh( geometry, material );
+```
+
+This gives us a cube which has the chosen geometry and material.
+
+```javascript
+scene.add( cube );
 ```
