@@ -1,0 +1,54 @@
+# Intro
+
+To create a project with Three.js, we first need to create a `Scene`, `Camera` and `Renderer`.
+
+## 1. Import:
+
+```html
+<script src="three.js"></script>
+```
+
+## 2. Scene:
+
+```javascript
+const scene = new THREE.Scene();
+```
+
+## 3. Camera:
+
+```javascript
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+```
+
+## 4. Renderer:
+
+First initiate the renderer.
+
+```javascript
+const renderer = new THREE.WebGLRenderer();
+```
+
+Then set a size
+
+```javascript
+renderer.setSize( window.innerWidth, window.innerHeight );
+```
+
+And add the renderer to the body
+
+```javascript
+document.body.appendChild( renderer.domElement );
+```
+
+## Result:
+
+This gives us the following piece of code:
+
+```javascript
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement );
+```

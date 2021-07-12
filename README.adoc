@@ -1,0 +1,4 @@
+# Three JS Collection
+
+This repository is used to learn how Three.js works and to build some simple games and animations with it.
+
