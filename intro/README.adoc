@@ -57,7 +57,7 @@ document.body.appendChild( renderer.domElement );
 
 To add objects to the scene you will have to do the following:
 
-## 3.1 Setup geometry:
+### 3.1 Setup geometry:
 
 First create the required geometry
 
@@ -81,4 +81,21 @@ This gives us a cube which has the chosen geometry and material.
 
 ```javascript
 scene.add( cube );
+```
+
+### 3.2 Interact with the objects:
+
+You could for example create an animation
+
+```javascript
+const animate = function () {
+    requestAnimationFrame( animate );
+
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+
+    renderer.render( scene, camera );
+};
+
+animate();
 ```
